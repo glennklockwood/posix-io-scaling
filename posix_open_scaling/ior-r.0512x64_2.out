@@ -1,0 +1,96 @@
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+ior WARNING: hints not available in POSIX.  Using value of 0.
+Began: Sun May  7 11:56:22 2017
+Command line used: /home/glock/bin/ior -H -k -r -o /scratch/glock/tmp.bin -f /home/glock/experiments/ior_metadata/openclose.ior
+Machine: Linux nid03336
+
+Test 0 started: Sun May  7 11:56:22 2017
+Summary:
+	api                = POSIX
+	test filename      = /scratch/glock/tmp.bin
+	access             = single-shared-file
+	ordering in a file = sequential offsets
+	ordering inter file= no tasks offsets
+	clients            = 32768 (64 per node)
+	repetitions        = 16
+	repetitionsPerFile = 1
+	repetitionsPerFileRW = 0
+	xfersize           = 4096 bytes
+	blocksize          = 4096 bytes
+	aggregate filesize = 0 bytes
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+WARNING: Expected aggregate file size       = 0.
+WARNING: Stat() of aggregate file size      = 67108864.
+WARNING: Using actual aggregate bytes moved = 0.
+read      0.000000   4.00       4.00       1.77       0.026038   0.050553   1.80       0   
+WARNING: Expected aggregate file size       = 0.
+WARNING: Stat() of aggregate file size      = 67108864.
+WARNING: Using actual aggregate bytes moved = 0.
+read      0.000000   4.00       4.00       1.58       0.030772   0.029157   1.61       1   
+WARNING: Expected aggregate file size       = 0.
+WARNING: Stat() of aggregate file size      = 67108864.
+WARNING: Using actual aggregate bytes moved = 0.
+read      0.000000   4.00       4.00       1.44       0.024989   0.028016   1.45       2   
+WARNING: Expected aggregate file size       = 0.
+WARNING: Stat() of aggregate file size      = 67108864.
+WARNING: Using actual aggregate bytes moved = 0.
+read      0.000000   4.00       4.00       1.39       0.025025   0.028146   1.41       3   
+WARNING: Expected aggregate file size       = 0.
+WARNING: Stat() of aggregate file size      = 67108864.
+WARNING: Using actual aggregate bytes moved = 0.
+read      0.000000   4.00       4.00       1.72       0.038732   0.078685   1.81       4   
+WARNING: Expected aggregate file size       = 0.
+WARNING: Stat() of aggregate file size      = 67108864.
+WARNING: Using actual aggregate bytes moved = 0.
+read      0.000000   4.00       4.00       1.61       0.027471   0.028367   1.63       5   
+WARNING: Expected aggregate file size       = 0.
+WARNING: Stat() of aggregate file size      = 67108864.
+WARNING: Using actual aggregate bytes moved = 0.
+read      0.000000   4.00       4.00       1.66       0.025204   0.068728   1.71       6   
+WARNING: Expected aggregate file size       = 0.
+WARNING: Stat() of aggregate file size      = 67108864.
+WARNING: Using actual aggregate bytes moved = 0.
+read      0.000000   4.00       4.00       1.70       0.025329   0.029005   1.71       7   
+WARNING: Expected aggregate file size       = 0.
+WARNING: Stat() of aggregate file size      = 67108864.
+WARNING: Using actual aggregate bytes moved = 0.
+read      0.000000   4.00       4.00       2.02       0.025323   0.040107   2.04       8   
+WARNING: Expected aggregate file size       = 0.
+WARNING: Stat() of aggregate file size      = 67108864.
+WARNING: Using actual aggregate bytes moved = 0.
+read      0.000000   4.00       4.00       1.38       0.025412   0.028214   1.39       9   
+WARNING: Expected aggregate file size       = 0.
+WARNING: Stat() of aggregate file size      = 67108864.
+WARNING: Using actual aggregate bytes moved = 0.
+read      0.000000   4.00       4.00       1.48       0.025447   0.028601   1.49       10  
+WARNING: Expected aggregate file size       = 0.
+WARNING: Stat() of aggregate file size      = 67108864.
+WARNING: Using actual aggregate bytes moved = 0.
+read      0.000000   4.00       4.00       1.67       0.025520   0.027962   1.67       11  
+WARNING: Expected aggregate file size       = 0.
+WARNING: Stat() of aggregate file size      = 67108864.
+WARNING: Using actual aggregate bytes moved = 0.
+read      0.000000   4.00       4.00       1.96       0.025560   0.037313   1.98       12  
+WARNING: Expected aggregate file size       = 0.
+WARNING: Stat() of aggregate file size      = 67108864.
+WARNING: Using actual aggregate bytes moved = 0.
+read      0.000000   4.00       4.00       1.93       0.025639   0.029459   1.95       13  
+WARNING: Expected aggregate file size       = 0.
+WARNING: Stat() of aggregate file size      = 67108864.
+WARNING: Using actual aggregate bytes moved = 0.
+read      0.000000   4.00       4.00       1.69       0.027701   0.028834   1.70       14  
+WARNING: Expected aggregate file size       = 0.
+WARNING: Stat() of aggregate file size      = 67108864.
+WARNING: Using actual aggregate bytes moved = 0.
+read      0.000000   4.00       4.00       1.96       0.025790   0.029254   1.97       15  
+
+Max Read:  0.00 MiB/sec (0.00 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum repPF repPFrw
+read            0.00       0.00       0.00       0.00    1.70829 0 32768 64 16 0 0 1 0 0 0 4096 4096 0 POSIX 0 1 0
+
+Finished: Sun May  7 11:56:50 2017
