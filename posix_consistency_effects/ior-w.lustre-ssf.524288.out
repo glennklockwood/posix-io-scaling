@@ -1,0 +1,39 @@
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+ior WARNING: fsync() only available in POSIX.  Using value of 0.
+Began: Sat May  6 22:48:33 2017
+Command line used: /global/homes/g/glock/src/git/ior/src/ior -t 524288 -b 524288 -s 104 -e -w -o /global/gscratch1/sd/glock/4stripe/testFile -O memoryPerNode=90%
+Machine: Linux nid00384
+
+Test 0 started: Sat May  6 22:48:33 2017
+Summary:
+	api                = MPIIO (version=3, subversion=1)
+	test filename      = /global/gscratch1/sd/glock/4stripe/testFile
+	access             = single-shared-file
+	ordering in a file = sequential offsets
+	ordering inter file= no tasks offsets
+	clients            = 256 (32 per node)
+	memoryPerNode      = 113.44 GiB
+	repetitions        = 3
+	repetitionsPerFile = 1
+	repetitionsPerFileRW = 0
+	xfersize           = 524288 bytes
+	blocksize          = 524288 bytes
+	aggregate filesize = 13 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+write     1194.74    512.00     512.00     0.016706   11.13      10.74      11.14      0   
+remove    -          -          -          -          -          -          0.000716   0   
+write     1104.23    512.00     512.00     0.012823   12.04      11.29      12.06      1   
+remove    -          -          -          -          -          -          0.000624   1   
+write     1169.36    512.00     512.00     0.013505   11.37      10.61      11.38      2   
+remove    -          -          -          -          -          -          0.000790   2   
+
+Max Write: 1194.74 MiB/sec (1252.78 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum repPF repPFrw
+write        1194.74    1104.23    1156.11      38.12   11.52722 0 256 32 3 0 0 1 0 0 104 524288 524288 13958643712 MPIIO 0 1 0
+
+Finished: Sat May  6 22:49:12 2017

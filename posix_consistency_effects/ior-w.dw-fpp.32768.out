@@ -1,0 +1,39 @@
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+ior WARNING: fsync() only available in POSIX.  Using value of 0.
+Began: Sat May  6 22:42:39 2017
+Command line used: /global/homes/g/glock/src/git/ior/src/ior -t 32768 -b 32768 -s 1664 -e -w -o /var/opt/cray/dws/mounts/batch/25969_striped_scratch//testFile -F -O memoryPerNode=90%
+Machine: Linux nid00384
+
+Test 0 started: Sat May  6 22:42:39 2017
+Summary:
+	api                = MPIIO (version=3, subversion=1)
+	test filename      = /var/opt/cray/dws/mounts/batch/25969_striped_scratch//testFile
+	access             = file-per-process
+	ordering in a file = sequential offsets
+	ordering inter file= no tasks offsets
+	clients            = 256 (32 per node)
+	memoryPerNode      = 113.44 GiB
+	repetitions        = 3
+	repetitionsPerFile = 1
+	repetitionsPerFileRW = 0
+	xfersize           = 32768 bytes
+	blocksize          = 32768 bytes
+	aggregate filesize = 13 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+write     5243       32.00      32.00      0.033050   2.54       0.255879   2.54       0   
+remove    -          -          -          -          -          -          0.142497   0   
+write     5238       32.00      32.00      0.044138   2.52       0.282070   2.54       1   
+remove    -          -          -          -          -          -          0.150433   1   
+write     5196       32.00      32.00      0.036711   2.55       0.345985   2.56       2   
+remove    -          -          -          -          -          -          0.151884   2   
+
+Max Write: 5242.55 MiB/sec (5497.21 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum repPF repPFrw
+write        5242.55    5196.43    5225.76      20.82    2.54742 0 256 32 3 1 0 1 0 0 1664 32768 32768 13958643712 MPIIO 0 1 0
+
+Finished: Sat May  6 22:42:51 2017

@@ -1,0 +1,39 @@
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+ior WARNING: fsync() only available in POSIX.  Using value of 0.
+Began: Sat May  6 22:42:05 2017
+Command line used: /global/homes/g/glock/src/git/ior/src/ior -t 262144 -b 262144 -s 208 -e -w -o /var/opt/cray/dws/mounts/batch/25969_striped_scratch//testFile -F -O memoryPerNode=90%
+Machine: Linux nid00384
+
+Test 0 started: Sat May  6 22:42:05 2017
+Summary:
+	api                = MPIIO (version=3, subversion=1)
+	test filename      = /var/opt/cray/dws/mounts/batch/25969_striped_scratch//testFile
+	access             = file-per-process
+	ordering in a file = sequential offsets
+	ordering inter file= no tasks offsets
+	clients            = 256 (32 per node)
+	memoryPerNode      = 113.44 GiB
+	repetitions        = 3
+	repetitionsPerFile = 1
+	repetitionsPerFileRW = 0
+	xfersize           = 262144 bytes
+	blocksize          = 262144 bytes
+	aggregate filesize = 13 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+write     13028      256.00     256.00     0.039581   1.02       0.221570   1.02       0   
+remove    -          -          -          -          -          -          0.146471   0   
+write     12900      256.00     256.00     0.045327   1.01       0.114211   1.03       1   
+remove    -          -          -          -          -          -          0.153683   1   
+write     11933      256.00     256.00     0.044973   1.10       0.182107   1.12       2   
+remove    -          -          -          -          -          -          0.148872   2   
+
+Max Write: 13028.28 MiB/sec (13661.14 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum repPF repPFrw
+write       13028.28   11933.38   12620.39     488.63    1.05643 0 256 32 3 1 0 1 0 0 208 262144 262144 13958643712 MPIIO 0 1 0
+
+Finished: Sat May  6 22:42:13 2017

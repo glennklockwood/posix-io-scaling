@@ -1,0 +1,39 @@
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+ior WARNING: fsync() only available in POSIX.  Using value of 0.
+Began: Sat May  6 22:49:17 2017
+Command line used: /global/homes/g/glock/src/git/ior/src/ior -t 262144 -b 262144 -s 208 -e -w -o /global/gscratch1/sd/glock/4stripe/testFile -O memoryPerNode=90%
+Machine: Linux nid00384
+
+Test 0 started: Sat May  6 22:49:17 2017
+Summary:
+	api                = MPIIO (version=3, subversion=1)
+	test filename      = /global/gscratch1/sd/glock/4stripe/testFile
+	access             = single-shared-file
+	ordering in a file = sequential offsets
+	ordering inter file= no tasks offsets
+	clients            = 256 (32 per node)
+	memoryPerNode      = 113.44 GiB
+	repetitions        = 3
+	repetitionsPerFile = 1
+	repetitionsPerFileRW = 0
+	xfersize           = 262144 bytes
+	blocksize          = 262144 bytes
+	aggregate filesize = 13 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+write     825.30     256.00     256.00     0.016837   16.11      15.73      16.13      0   
+remove    -          -          -          -          -          -          0.000577   0   
+write     698.22     256.00     256.00     0.012336   19.05      18.27      19.07      1   
+remove    -          -          -          -          -          -          0.000689   1   
+write     755.55     256.00     256.00     0.013635   17.61      16.76      17.62      2   
+remove    -          -          -          -          -          -          0.000860   2   
+
+Max Write: 825.30 MiB/sec (865.39 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum repPF repPFrw
+write         825.30     698.22     759.69      51.96   17.60483 0 256 32 3 0 0 1 0 0 208 262144 262144 13958643712 MPIIO 0 1 0
+
+Finished: Sat May  6 22:50:14 2017

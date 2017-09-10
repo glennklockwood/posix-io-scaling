@@ -1,0 +1,39 @@
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+ior WARNING: fsync() only available in POSIX.  Using value of 0.
+Began: Sat May  6 22:48:12 2017
+Command line used: /global/homes/g/glock/src/git/ior/src/ior -t 1048576 -b 1048576 -s 52 -e -w -o /global/gscratch1/sd/glock/4stripe/testFile -O memoryPerNode=90%
+Machine: Linux nid00384
+
+Test 0 started: Sat May  6 22:48:12 2017
+Summary:
+	api                = MPIIO (version=3, subversion=1)
+	test filename      = /global/gscratch1/sd/glock/4stripe/testFile
+	access             = single-shared-file
+	ordering in a file = sequential offsets
+	ordering inter file= no tasks offsets
+	clients            = 256 (32 per node)
+	memoryPerNode      = 113.44 GiB
+	repetitions        = 3
+	repetitionsPerFile = 1
+	repetitionsPerFileRW = 0
+	xfersize           = 1 MiB
+	blocksize          = 1 MiB
+	aggregate filesize = 13 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+write     3204.70    1024.00    1024.00    0.016042   4.14       3.92       4.15       0   
+remove    -          -          -          -          -          -          0.000621   0   
+write     3176.13    1024.00    1024.00    0.012059   4.18       3.93       4.19       1   
+remove    -          -          -          -          -          -          0.000574   1   
+write     3019.47    1024.00    1024.00    0.011607   4.37       3.99       4.41       2   
+remove    -          -          -          -          -          -          0.000630   2   
+
+Max Write: 3204.70 MiB/sec (3360.37 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum repPF repPFrw
+write        3204.70    3019.47    3133.43      81.42    4.25129 0 256 32 3 0 0 1 0 0 52 1048576 1048576 13958643712 MPIIO 0 1 0
+
+Finished: Sat May  6 22:48:29 2017

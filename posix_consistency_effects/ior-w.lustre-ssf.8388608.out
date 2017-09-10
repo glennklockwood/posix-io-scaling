@@ -1,0 +1,39 @@
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+ior WARNING: fsync() only available in POSIX.  Using value of 0.
+Began: Sat May  6 22:47:14 2017
+Command line used: /global/homes/g/glock/src/git/ior/src/ior -t 8388608 -b 8388608 -s 6 -e -w -o /global/gscratch1/sd/glock/4stripe/testFile -O memoryPerNode=90%
+Machine: Linux nid00384
+
+Test 0 started: Sat May  6 22:47:14 2017
+Summary:
+	api                = MPIIO (version=3, subversion=1)
+	test filename      = /global/gscratch1/sd/glock/4stripe/testFile
+	access             = single-shared-file
+	ordering in a file = sequential offsets
+	ordering inter file= no tasks offsets
+	clients            = 256 (32 per node)
+	memoryPerNode      = 113.44 GiB
+	repetitions        = 3
+	repetitionsPerFile = 1
+	repetitionsPerFileRW = 0
+	xfersize           = 8 MiB
+	blocksize          = 8 MiB
+	aggregate filesize = 12 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+write     3386.34    8192       8192       0.028513   3.60       1.71       3.63       0   
+remove    -          -          -          -          -          -          0.000780   0   
+write     3043.44    8192       8192       0.011677   3.99       3.32       4.04       1   
+remove    -          -          -          -          -          -          0.000600   1   
+write     3220.17    8192       8192       0.011994   3.80       2.09       3.82       2   
+remove    -          -          -          -          -          -          0.000716   2   
+
+Max Write: 3386.34 MiB/sec (3550.83 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum repPF repPFrw
+write        3386.34    3043.44    3216.65     140.01    3.82739 0 256 32 3 0 0 1 0 0 6 8388608 8388608 12884901888 MPIIO 0 1 0
+
+Finished: Sat May  6 22:47:29 2017

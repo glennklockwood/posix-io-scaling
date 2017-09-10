@@ -1,0 +1,39 @@
+IOR-3.0.1: MPI Coordinated Test of Parallel I/O
+
+ior WARNING: fsync() only available in POSIX.  Using value of 0.
+Began: Sat May  6 22:43:39 2017
+Command line used: /global/homes/g/glock/src/git/ior/src/ior -t 8388608 -b 8388608 -s 6 -e -w -o /global/gscratch1/sd/glock/1stripe/testFile -F -O memoryPerNode=90%
+Machine: Linux nid00384
+
+Test 0 started: Sat May  6 22:43:39 2017
+Summary:
+	api                = MPIIO (version=3, subversion=1)
+	test filename      = /global/gscratch1/sd/glock/1stripe/testFile
+	access             = file-per-process
+	ordering in a file = sequential offsets
+	ordering inter file= no tasks offsets
+	clients            = 256 (32 per node)
+	memoryPerNode      = 113.44 GiB
+	repetitions        = 3
+	repetitionsPerFile = 1
+	repetitionsPerFileRW = 0
+	xfersize           = 8 MiB
+	blocksize          = 8 MiB
+	aggregate filesize = 12 GiB
+
+access    bw(MiB/s)  block(KiB) xfer(KiB)  open(s)    wr/rd(s)   close(s)   total(s)   iter
+------    ---------  ---------- ---------  --------   --------   --------   --------   ----
+write     3448.00    8192       8192       0.025610   3.56       2.45       3.56       0   
+remove    -          -          -          -          -          -          0.010474   0   
+write     3290.39    8192       8192       0.033475   3.72       3.21       3.73       1   
+remove    -          -          -          -          -          -          0.008897   1   
+write     3449.35    8192       8192       0.032563   3.55       2.47       3.56       2   
+remove    -          -          -          -          -          -          0.014394   2   
+
+Max Write: 3449.35 MiB/sec (3616.91 MB/sec)
+
+Summary of all tests:
+Operation   Max(MiB)   Min(MiB)  Mean(MiB)     StdDev    Mean(s) Test# #Tasks tPN reps fPP reord reordoff reordrand seed segcnt blksiz xsize aggsize API RefNum repPF repPFrw
+write        3449.35    3290.39    3395.91      74.62    3.62024 0 256 32 3 1 0 1 0 0 6 8388608 8388608 12884901888 MPIIO 0 1 0
+
+Finished: Sat May  6 22:43:54 2017
