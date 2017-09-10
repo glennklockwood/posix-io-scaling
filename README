@@ -1,0 +1,14 @@
+This repository contains two sets of IOR results and Jupyter notebooks that
+demonstrate the limitations of POSIX semantics on I/O scalability.
+
+- `posix_consistency_effects` - Demonstrates how performance degrades for very
+  small transaction sizes when strict POSIX consistency semantics must be
+  maintained.  Compares Lustre shared-file writes (client cache + locking),
+  DataWarp shared-file writes (no client cache, no locking), and Lustre
+  file-per-process (as a proxy for client cache without locking) at various
+  transaction sizes.
+- `posix_open_scaling` - Demonstrates how the performance of opening a single
+  shared file degrades as the number of concurrent I/O contexts increases.
+
+More information and context into these data and plots will be posted online
+as time permits.
